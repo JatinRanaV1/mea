@@ -1,6 +1,6 @@
 numpy
 argparse
-os
+os-sys
 scikit-learn
 pandas
 pickle5
