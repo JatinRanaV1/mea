@@ -5,7 +5,7 @@ scikit-learn
 pandas
 pickle5
 python-math
-python-cv2
+opencv-python
 Pillow
 Click==7.0
 Flask==1.1.1
