@@ -2,6 +2,7 @@ numpy
 argparse
 scikit-learn
 pandas
+matplotlib
 pickle5
 python-math
 opencv-python
@@ -14,3 +15,4 @@ Jinja2==2.10.1
 MarkupSafe==1.1.1
 Werkzeug==0.15.6
 urllib3
+tensorflow
