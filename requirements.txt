@@ -15,6 +15,5 @@ itsdangerous
 Jinja2
 MarkupSafe
 Werkzeug
-urllib3
 joblib
 threadpoolctl
