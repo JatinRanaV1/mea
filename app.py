@@ -1,6 +1,5 @@
 import math
 import argparse
-import os
 from flask import Flask, flash, request, redirect, url_for, render_template, send_from_directory
 from werkzeug.utils import secure_filename
 import urllib.request
@@ -21,10 +20,9 @@ def home():
 def upload_image():
     if request.method == "POST":
         image = request.files["image"]
-        image.save(os.path.join(app.config["IMAGE_UPLOADS"],image.filename))
-        file=os.path.join(app.config["IMAGE_UPLOADS"],image.filename)
+        image.save(secure_filename(image.filename))
 
-    frame=cv.imread(file)
+    frame=cv.imread(image.filename)
     BODY_PARTS = { "Nose": 0, "Neck": 1, "RShoulder": 2, "RElbow": 3, "RWrist": 4,
                "LShoulder": 5, "LElbow": 6, "LWrist": 7, "RHip": 8, "RKnee": 9,
                "RAnkle": 10, "LHip": 11, "LKnee": 12, "LAnkle": 13, "REye": 14,
@@ -34,7 +32,7 @@ def upload_image():
                ["RElbow", "RWrist"], ["LShoulder", "LElbow"], ["LElbow", "LWrist"],
                ["LShoulder", "LHip"], ["RShoulder", "RHip"], ["LHip", "RHip"], ["LHip", "LKnee"], ["LKnee", "LAnkle"],
                ["LHip", "LKnee"], ["RHip", "RKnee"], ["RKnee", "RAnkle"] ]
-    print='fewfew'
+    
     inWidth = 368
     inHeight = 368
 
